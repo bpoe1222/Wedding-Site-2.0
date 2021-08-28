@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+* {
+  font-family: 'Dancing Script', cursive;
+}
+
+:root {
+  /* --primary-color: rgba(20, 61, 89, 0.75); */
+  --overlay-color: rgba(68, 68, 68, 0.85);
+  --menu-speed: 0.5s;
+  --clr-neutral-900: hsl(207, 19%, 9%);
+  --clr-neutral-100: hsl(0,0%,100%);
+  --clr-accent-400: hsl(300, 100%, 90%);
+}
+
+.new-font {
+  font-family: 'Dancing Script', cursive;
+  color: lightpink;
+}
+
+main, body{
+  background-color: #fff;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
+}
+
+/* MENU STYLES */
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.menu-wrap .toggler {
+  position: absolute;
+  top: 30px;
+  left: 23px;
+  z-index: 5;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Hamburger Line */
+.menu-wrap .hamburger > div {
+  position: relative;
+  width: 50%;
+  height: 2px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.7s ease;
+}
+
+/* Hamburger Lines - Top & Bottom */
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+
+/* Moves Line Down */
+.menu-wrap .hamburger > div::after {
+  top: 10px;
+}
+
+/* Toggler Animation */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines Into 'X' */
+
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+   top: 0;
+   transform: rotate(90deg);
+}
+
+/* Rotate on Hover When Checkbox is Checked */
+
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+   transform: rotate(225deg);
+}
+
+/* Show Menu */
+
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition: opacity 0.4 ease;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-wrap .menu > div {
+  background: var(--overlay-color);
+  border-radius: 50%;
+  width: 300vw;
+  height: 300vw;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.menu-wrap .menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+.no-style {
+list-style: none;
+}
+
+.centered {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.light-green.darken-4 {
+  background-color: #33691e !important;
+}
+
+nav .brand-logo {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding: 0;
+}
+
+nav .brand-logo.center {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.center, .center-align {
+  text-align: center;
+}
+
+
+/* Optimization for small mac screens */
+
+@media only screen and (max-width: 1850px) {
+.hide-on-mac-only {
+  display: none !important;
+}
+}
+
+@media only screen and (max-width: 1850px) {
+.show-on-mac {
+  display: inline-block !important;
+}
+}
+
+@media only screen and (max-width: 1120px) {
+.hide-for-nav {
+  display: none !important;
+}
+}
+
+@media only screen and (min-width: 1120px) {
+.show-for-nav {
+  display: inherit !important;
+}
+}
+
+@media only screen and (min-width: 1121px) {
+.hide-for-big-nav {
+  display: none !important;
+}
+}
+
+.card {
+  color: var(--clr-neutral-100);
+  background-image: url(../images/cash-fund.jpg);
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 500ms ease-in-out;
+}
+
+.questions {
+  color: var(--clr-neutral-100);
+  background-image: url(../images/question-mark.jpg);
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 500ms ease-in-out;
+}
+
+.rsvp {
+  color: var(--clr-neutral-100);
+  background-image: url(../images/rsvp.jpg);
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 500ms ease-in-out;
+}
+.about-us {
+  color: var(--clr-neutral-100);
+  background-image: url(../images/about-us.jpg);
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 500ms ease-in-out;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: scale(1.05);
+}
+
+.questions:hover,
+.questions:focus-within {
+  transform: scale(1.05);
+}
+
+.rsvp:hover,
+.rsvp:focus-within {
+  transform: scale(1.05);
+}
+
+.about-us:hover,
+.about-us:focus-within {
+  transform: scale(1.05);
+}
+
+.card-nav {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 25px;
+}
+
+.card-content {
+  --padding: 1.5rem;
+  padding: var(--padding);
+  background: linear-gradient(
+      hsl(0 0% 0% / 0),
+      hsl(0 0% 0% / 0.3) 10%,
+      hsl(0 0% 0% / 1)
+  );
+  font-size: 1.5rem;
+  transform: translateY(63%);
+
+  transition: transform 500ms ease-in-out;
+}
+
+.questions .card-content {
+  transform: translateY(63%);
+}
+
+.rsvp .card-content {
+  transform: translateY(63%);
+}
+
+.about-us .card-content {
+  transform: translateY(63%);
+}
+
+.card:hover .card-content,
+.card:focus-within .card-content {
+  transform: translateY(10%);
+  transition-delay: 250ms;
+}
+
+.questions:hover .card-content,
+.questions:focus-within .card-content {
+  transform: translateY(0);
+  transition-delay: 250ms;
+}
+
+.rsvp:hover .card-content,
+.rsvp:focus-within .card-content {
+  transform: translateY(10%);
+  transition-delay: 250ms;
+}
+
+.about-us:hover .card-content,
+.about-us:focus-within .card-content {
+  transform: translateY(0);
+  transition-delay: 250ms;
+}
+
+.card:focus-within .card-content {
+  transition-duration: 0ms;
+}
+
+.questions:focus-within .card-content {
+  transition-duration: 0ms;
+}
+
+.rsvp:focus-within .card-content {
+  transition-duration: 0ms;
+}
+
+.about-us:focus-within .card-content {
+  transition-duration: 0ms;
+}
+
+.card-content > *:not(.card-title) {
+  opacity: 0;
+  transition: opacity 500ms linear;
+}
+
+.card:hover .card-content > *:not(.card-title),
+.card:focus-within .card-content > *:not(.card-title) {
+  opacity: 1;
+  transition-delay: 750ms;
+}
+
+.questions:hover .card-content > *:not(.card-title),
+.questions:focus-within .card-content > *:not(.card-title) {
+  opacity: 1;
+  transition-delay: 750ms;
+}
+
+.rsvp:hover .card-content > *:not(.card-title),
+.rsvp:focus-within .card-content > *:not(.card-title) {
+  opacity: 1;
+  transition-delay: 750ms;
+}
+
+.about-us:hover .card-content > *:not(.card-title),
+.about-us:focus-within .card-content > *:not(.card-title) {
+  opacity: 1;
+  transition-delay: 750ms;
+}
+
+.card-title {
+  position: relative;
+  width: max-content;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  background: var(--clr-accent-400);
+  width: calc(100% + var(--padding));
+  left: calc(var(--padding) * -1);
+  bottom: -2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms ease;
+}
+
+.card:hover .card-title::after,
+.card:focus-within .card-title::after {
+  transform: scaleX(1);
+}
+
+.questions:hover .card-title::after,
+.questions:focus-within .card-title::after {
+  transform: scaleX(1);
+}
+
+.rsvp:hover .card-title::after,
+.rsvp:focus-within .card-title::after {
+  transform: scaleX(1);
+}
+
+.about-us:hover .card-title::after,
+.about-us:focus-within .card-title::after {
+  transform: scaleX(1);
+}
+
+.card-body {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--clr-neutral-900);
+  background-color: var(--clr-accent-400);
+  padding: 0.5em 1.25em;
+  border-radius: 0.25rem;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--clr-neutral-100);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+}
+
+.sticky > div > a {
+  text-decoration: none;
+}
+
+.sticky > div > a > h1{
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+nav {
+  background-color: rgb(0, 0, 65);
+  width: 100vw;
+  margin-left: -0.5rem;
+  top: 0px;
+}
+
+.espanol > button{
+  position: absolute;
+  left: 91%;
+  top: 40px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: #fff;
+  background-color: rgb(0, 0, 65);
+  transition: transform 750ms ease;
+}
+
+.espanol > button:hover,
+.espanol > button:focus {
+  transform: scale(1.3);
+}
