@@ -208,15 +208,29 @@ nav .brand-logo.center {
 
 /* Optimization for small mac screens */
 
-@media only screen and (max-width: 1850px) {
-.hide-on-mac-only {
-  display: none !important;
+@media only screen and (max-width: 1495px) {
+.card-nav {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    place-items: center;
+    line-height: 1.6;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.espanol > button {
+  margin-left: -38px;
 }
 }
 
 @media only screen and (max-width: 1850px) {
 .show-on-mac {
   display: inline-block !important;
+  place-items: center;
 }
 }
 
@@ -415,7 +429,7 @@ nav .brand-logo.center {
   width: calc(100% + var(--padding));
   left: calc(var(--padding) * -1);
   bottom: -2px;
-  transform: scaleX(0);
+  transform: translateY(0);
   transform-origin: left;
   transition: transform 500ms ease;
 }
@@ -505,12 +519,176 @@ nav {
   transform: scale(1.3);
 }
 
-@media (hover) {
-  .card-content {
-    transform: translateY(65%);
-    transition: transform 500ms ease;
+@media (hover: hover) {
+  .card {
+    color: var(--clr-neutral-100);
+    background-image: url(../images/cash-fund.jpg);
+    background-size: cover;
+    padding: 10rem 0 0;
+    max-width: 35ch;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 500ms ease-in-out;
   }
-
+  
+  .questions {
+    color: var(--clr-neutral-100);
+    background-image: url(../images/question-mark.jpg);
+    background-size: cover;
+    padding: 10rem 0 0;
+    max-width: 35ch;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 500ms ease-in-out;
+  }
+  
+  .rsvp {
+    color: var(--clr-neutral-100);
+    background-image: url(../images/rsvp.jpg);
+    background-size: cover;
+    padding: 10rem 0 0;
+    max-width: 35ch;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 500ms ease-in-out;
+  }
+  .about-us {
+    color: var(--clr-neutral-100);
+    background-image: url(../images/about-us.jpg);
+    background-size: cover;
+    padding: 10rem 0 0;
+    max-width: 35ch;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 500ms ease-in-out;
+  }
+  
+  .card:hover,
+  .card:focus-within {
+    transform: scale(1.05);
+  }
+  
+  .questions:hover,
+  .questions:focus-within {
+    transform: scale(1.05);
+  }
+  
+  .rsvp:hover,
+  .rsvp:focus-within {
+    transform: scale(1.05);
+  }
+  
+  .about-us:hover,
+  .about-us:focus-within {
+    transform: scale(1.05);
+  }
+  
+  .card-nav {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
+  }
+  
+  .card-content {
+    --padding: 1.5rem;
+    padding: var(--padding);
+    background: linear-gradient(
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / 0.3) 10%,
+        hsl(0 0% 0% / 1)
+    );
+    font-size: 1.5rem;
+    transform: translateY(63%);
+  
+    transition: transform 500ms ease-in-out;
+  }
+  
+  .questions .card-content {
+    transform: translateY(63%);
+  }
+  
+  .rsvp .card-content {
+    transform: translateY(63%);
+  }
+  
+  .about-us .card-content {
+    transform: translateY(63%);
+  }
+  
+  .card:hover .card-content,
+  .card:focus-within .card-content {
+    transform: translateY(10%);
+    transition-delay: 250ms;
+  }
+  
+  .questions:hover .card-content,
+  .questions:focus-within .card-content {
+    transform: translateY(0);
+    transition-delay: 250ms;
+  }
+  
+  .rsvp:hover .card-content,
+  .rsvp:focus-within .card-content {
+    transform: translateY(10%);
+    transition-delay: 250ms;
+  }
+  
+  .about-us:hover .card-content,
+  .about-us:focus-within .card-content {
+    transform: translateY(0);
+    transition-delay: 250ms;
+  }
+  
+  .card:focus-within .card-content {
+    transition-duration: 0ms;
+  }
+  
+  .questions:focus-within .card-content {
+    transition-duration: 0ms;
+  }
+  
+  .rsvp:focus-within .card-content {
+    transition-duration: 0ms;
+  }
+  
+  .about-us:focus-within .card-content {
+    transition-duration: 0ms;
+  }
+  
+  .card-content > *:not(.card-title) {
+    opacity: 0;
+    transition: opacity 500ms linear;
+  }
+  
+  .card:hover .card-content > *:not(.card-title),
+  .card:focus-within .card-content > *:not(.card-title) {
+    opacity: 1;
+    transition-delay: 750ms;
+  }
+  
+  .questions:hover .card-content > *:not(.card-title),
+  .questions:focus-within .card-content > *:not(.card-title) {
+    opacity: 1;
+    transition-delay: 750ms;
+  }
+  
+  .rsvp:hover .card-content > *:not(.card-title),
+  .rsvp:focus-within .card-content > *:not(.card-title) {
+    opacity: 1;
+    transition-delay: 750ms;
+  }
+  
+  .about-us:hover .card-content > *:not(.card-title),
+  .about-us:focus-within .card-content > *:not(.card-title) {
+    opacity: 1;
+    transition-delay: 750ms;
+  }
+  
+  .card-title {
+    position: relative;
+    width: max-content;
+  }
+  
   .card-title::after {
     content: "";
     position: absolute;
@@ -519,7 +697,7 @@ nav {
     width: calc(100% + var(--padding));
     left: calc(var(--padding) * -1);
     bottom: -2px;
-    transform: scaleX(0);
+    transform: translateY(0);
     transform-origin: left;
     transition: transform 500ms ease;
   }
@@ -543,73 +721,32 @@ nav {
   .about-us:focus-within .card-title::after {
     transform: scaleX(1);
   }
-
-  .card:hover .card-content,
-.card:focus-within .card-content {
-  transform: translateY(10%);
-  transition-delay: 250ms;
+  
+  .card-body {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  
+  .button {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--clr-neutral-900);
+    background-color: var(--clr-accent-400);
+    padding: 0.5em 1.25em;
+    border-radius: 0.25rem;
+  }
+  
+  .button:hover,
+  .button:focus {
+    background-color: var(--clr-neutral-100);
+  }
 }
 
-.questions:hover .card-content,
-.questions:focus-within .card-content {
-  transform: translateY(0);
-  transition-delay: 250ms;
-}
-
-.rsvp:hover .card-content,
-.rsvp:focus-within .card-content {
-  transform: translateY(10%);
-  transition-delay: 250ms;
-}
-
-.about-us:hover .card-content,
-.about-us:focus-within .card-content {
-  transform: translateY(0);
-  transition-delay: 250ms;
-}
-
-.card:focus-within .card-content {
-  transition-duration: 0ms;
-}
-
-.questions:focus-within .card-content {
-  transition-duration: 0ms;
-}
-
-.rsvp:focus-within .card-content {
-  transition-duration: 0ms;
-}
-
-.about-us:focus-within .card-content {
-  transition-duration: 0ms;
-}
-
-.card-content > *:not(.card-title) {
-  opacity: 0;
-  transition: opacity 500ms linear;
-}
-
-.card:hover .card-content > *:not(.card-title),
-.card:focus-within .card-content > *:not(.card-title) {
-  opacity: 1;
-  transition-delay: 750ms;
-}
-
-.questions:hover .card-content > *:not(.card-title),
-.questions:focus-within .card-content > *:not(.card-title) {
-  opacity: 1;
-  transition-delay: 750ms;
-}
-
-.rsvp:hover .card-content > *:not(.card-title),
-.rsvp:focus-within .card-content > *:not(.card-title) {
-  opacity: 1;
-  transition-delay: 750ms;
-}
-
-.about-us:hover .card-content > *:not(.card-title),
-.about-us:focus-within .card-content > *:not(.card-title) {
-  opacity: 1;
-  transition-delay: 750ms;
-}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
