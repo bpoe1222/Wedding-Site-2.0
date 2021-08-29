@@ -261,7 +261,7 @@ nav .brand-logo.center {
   font-size: 1.5rem;
 }
 
-@media only screen and (max-width: 1444px) {
+@media only screen and (max-width: 1438px) {
 .card-nav {
     display: none !important;
 }
@@ -290,7 +290,7 @@ nav {
 }
 }
 
-@media only screen and (min-width: 1445px) {
+@media only screen and (min-width: 1439px) {
 .hide-for-nav {
   display: none !important;
 }
