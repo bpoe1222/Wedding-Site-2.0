@@ -231,7 +231,7 @@ nav {
 }
 
 .espanol > button {
-  margin-left: -38px;
+  margin-left: -50px;
 }
 }
 
@@ -517,7 +517,7 @@ nav {
   color: #fff;
 }
 
-.espanol > button{
+.espanol > button {
   position: absolute;
   left: 91%;
   top: 40px;
@@ -526,7 +526,7 @@ nav {
   text-decoration: none;
   font-size: 1.15rem;
   color: #fff;
-  background-color: rgba(0, 0, 65, 0.1);
+  background-color: rgba(0, 0, 65, 0.01);
   transition: transform 750ms ease;
 }
 
