@@ -1,5 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.shift {
+  margin: 0.5rem;
+}
+
 * {
   font-family: 'Dancing Script', cursive;
 }
@@ -220,7 +261,7 @@ nav .brand-logo.center {
   font-size: 1.5rem;
 }
 
-@media only screen and (max-width: 1495px) {
+@media only screen and (max-width: 1444px) {
 .card-nav {
     display: none !important;
 }
@@ -235,7 +276,7 @@ nav {
 }
 }
 
-@media only screen and (min-width: 1494px) {
+@media only screen and (min-width: 1px) {
   .show {
     display: inline-block;
     color: #000;
@@ -249,7 +290,7 @@ nav {
 }
 }
 
-@media only screen and (min-width: 1494px) {
+@media only screen and (min-width: 1445px) {
 .hide-for-nav {
   display: none !important;
 }
@@ -265,6 +306,12 @@ nav {
 .hide-for-big-nav {
   display: none !important;
 }
+}
+
+@media only screen and (max-width: 1510px) {
+  .adjust {
+    margin-top: 10px;
+  }
 }
 
 .card {
@@ -332,6 +379,7 @@ nav {
 
 .card-nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 25px;
 }
@@ -786,4 +834,13 @@ nav {
 hr {
   width: 100vw;
   margin-left: -8px;
+  color: rgb(0, 0, 65);
+}
+
+/* Registries.html styles */
+
+.registry-head {
+  display: flex;
+  justify-content: center;
+  color: rgb(0, 0, 65);
 }
