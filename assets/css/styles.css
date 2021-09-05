@@ -46,7 +46,7 @@
 
 :root {
   /* --primary-color: rgba(20, 61, 89, 0.75); */
-  --overlay-color: rgba(68, 68, 68, 0.85);
+  --overlay-color: hsl(82 39% 30% / 0.8);
   --menu-speed: 0.5s;
   --clr-neutral-900: hsl(207, 19%, 9%);
   --clr-neutral-100: hsl(0, 0%, 100%);
@@ -929,6 +929,8 @@ hr {
   color: #fff;
   text-align: center;
   padding: 2em;
+  border-radius: 100px;
+  margin-top: 2em;
 }
 
 .card-reg-box {
@@ -1155,4 +1157,125 @@ body {
 .icons-nav {
   margin: auto 0 0 0.5rem;
   font-size: 1.15rem;
+}
+
+/* Begin contact-us code */
+
+.bailey-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.bailey-title {
+  font-size: 2rem;
+}
+
+.main-body li {
+  font-size: 1.5rem;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: -25px;
+}
+
+.main-body li a {
+  text-decoration: none;
+  color: var(--clr-accent-400);
+  border-bottom: solid 0.1em var(--clr-accent-400);
+  margin-left: 0.5em;
+}
+
+footer {
+  background: rgb(0, 0, 65);
+  color: #fff;
+  font-size: 1.15em;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  left: -0.01em;
+}
+
+footer p a {
+  color: var(--clr-accent-400);
+  text-decoration: none;
+  transition: color 250ms ease-in-out;
+}
+
+footer p a:hover {
+  color: red;
+  border-bottom: dashed red 0.1em;
+}
+
+/* Begin RSVP styles */
+
+.form-container {
+  display: block;
+  justify-content: center;
+  width: 100%;
+}
+
+.info {
+  /* display: block; */
+  background: rgb(0, 0, 65);
+  color: #fff;
+  padding: 1em;
+  margin: 1em;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+.input input{
+  display: block;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: none;
+  text-align: center;
+  font-size: 1.25em;
+  margin: 0.5em 0.5em 0 0.5em;
+}
+
+.input:focus {
+  outline: 0;
+}
+
+button {
+  color: #666;
+  background-color: #ffbdc7;
+  border: none;
+  font-family: 'Raleway';
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 32px;
+  margin: -16px auto 0px auto; 
+  /* float:left; */
+}
+
+button.accept {
+  border-radius: 0px 0px 0px 10px;
+  border-right: solid 1px #cc919a;
+  width: 43vw;
+}
+
+button.regret {
+  border-radius: 0px 0px 10px 0px;
+  width: 43vw;
+}
+
+button:hover {
+  background-color: #cc919a;
+  transition: .5s;
+}
+
+button:focus {
+  outline: 0;
 }
