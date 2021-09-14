@@ -11,6 +11,10 @@
     url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
 }
 
+p {
+  font-size: 1.5rem;
+}
+
 .material-icons {
   font-family: "Material Icons";
   font-weight: normal;
@@ -328,7 +332,7 @@ nav .brand-logo.center {
 
 .questions {
   color: var(--clr-neutral-100);
-  background-image: url(../images/question-mark.jpg);
+  background-image: url(../images/questions.jpeg);
   background-size: cover;
   padding: 10rem 0 0;
   max-width: 35ch;
@@ -413,13 +417,13 @@ nav .brand-logo.center {
 
 .card:hover .card-content,
 .card:focus-within .card-content {
-  transform: translateY(0);
+  transform: translateY(10%);
   transition-delay: 250ms;
 }
 
 .questions:hover .card-content,
 .questions:focus-within .card-content {
-  transform: translateY(0);
+  transform: translateY(10%);
   transition-delay: 250ms;
 }
 
@@ -431,7 +435,7 @@ nav .brand-logo.center {
 
 .about-us:hover .card-content,
 .about-us:focus-within .card-content {
-  transform: translateY(0);
+  transform: translateY(0%);
   transition-delay: 250ms;
 }
 
@@ -494,6 +498,7 @@ nav .brand-logo.center {
   left: calc(var(--padding) * -1);
   bottom: -2px;
   transform: translateY(0);
+  transform: scaleX(0);
   transform-origin: left;
   transition: transform 500ms ease;
 }
@@ -583,7 +588,8 @@ nav {
 .espanol > button:focus {
   transform: scale(1.3);
 }
-@media screen and (min-width: 1000px) {
+
+/* @media screen and (max-width: 1000px) {
   @media (hover: hover) {
     .card {
       color: var(--clr-neutral-100);
@@ -598,7 +604,7 @@ nav {
 
     .questions {
       color: var(--clr-neutral-100);
-      background-image: url(../images/question-mark.jpg);
+      background-image: url(../images/questions.jpeg);
       background-size: cover;
       padding: 10rem 0 0;
       max-width: 35ch;
@@ -688,7 +694,7 @@ nav {
 
     .questions:hover .card-content,
     .questions:focus-within .card-content {
-      transform: translateY(0);
+      transform: translateY(10%);
       transition-delay: 250ms;
     }
 
@@ -764,10 +770,10 @@ nav {
       bottom: -2px;
       transform: translateY(0);
       transform-origin: left;
-      transition: transform 500ms ease;
-    }
+      /* transition: transform 500ms ease; */
+    /* } */
 
-    .card:hover .card-title::after,
+    /* .card:hover .card-title::after,
     .card:focus-within .card-title::after {
       transform: scaleX(1);
     }
@@ -807,7 +813,7 @@ nav {
       background-color: var(--clr-neutral-100);
     }
   }
-}
+}  */
 
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -1210,3 +1216,17 @@ footer p a:hover {
   border-bottom: dashed red 0.1em;
 }
 
+.img {
+  width: 350px;
+  margin-top: 1rem;
+  border-radius: 12%;
+}
+
+.abt-us-p {
+  display: inline-flex;
+  width: 250px;
+  background: rgb(0, 0, 65);
+  color: #fff;
+  padding: 1em;
+  border-radius: 20px;
+}
