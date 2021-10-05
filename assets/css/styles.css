@@ -590,7 +590,7 @@ nav {
 }
 
 /* @media screen and (max-width: 1000px) {
-  @media (hover: hover) {
+  @media (hover:hover) {
     .card {
       color: var(--clr-neutral-100);
       background-image: url(../images/cash-fund.jpg);
